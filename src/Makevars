@@ -1,2 +1,6 @@
-PKG_CXXFLAGS=-I../inst/include ${SHLIB_OPENMP_CXXFLAGS}
-PKG_LIBS=`$(R_HOME)/bin/Rscript -e "Rcpp:::LdFlags()"` ${SHLIB_OPENMP_CXXFLAGS}
+CC = /usr/local/clang4/bin/clang
+CXX = /usr/local/clang4/bin/clang++
+CFLAGS = -g -O2 -Wall -pedantic -Wconversion -Wno-sign-conversion
+CXXFLAGS = -g -O2 -Wall -pedantic -Wconversion -Wno-sign-conversion
+#CXX11 = $CXX
+CXX11 = /usr/local/clang4/bin/clang++
