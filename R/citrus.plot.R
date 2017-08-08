@@ -200,7 +200,7 @@ citrus.overlapDensityPlot = function(clusterDataList,backgroundData){
 citrus.plotModelClusters = function(differentialFeatures,modelOutputDirectory,clusterAssignments,citrus.combinedFCSSet,clusteringColumns,...){
   for (cvPoint in names(differentialFeatures)){
     clusterIds = as.numeric(differentialFeatures[[cvPoint]][["clusters"]])
-    outputFile = file.path(modelOutputDirectory,paste("clusters-",sub(pattern="\\.",replacement="_",x=cvPoint),".pdf",sep=""))
+    outputFile = paste("clusters-",sub(pattern="\\.",replacement="_",x=cvPoint),".pdf",sep="")
     citrus.plotClusters(clusterIds,clusterAssignments=clusterAssignments,citrus.combinedFCSSet,clusteringColumns,outputFile=outputFile,...)
   }
 }
