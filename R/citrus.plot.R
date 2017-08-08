@@ -151,8 +151,8 @@ citrus.plotModelDifferentialFeatures.classification = function(differentialFeatu
 
     melted = melt(data.frame(features[,nonzeroFeatureNames,drop=F],labels=labels,check.names=F),id.vars="labels")
     
-    
-    pdf(file.path(modelOutputDirectory,paste("features-",sub(pattern="\\.",replacement="_",x=cvPoint),".pdf",sep="")),width=4,height=length(nonzeroFeatureNames)*1.5)
+    pdf(file.path(modelOutputDirectory,"HopefullyThisWorks1.pdf"));
+    #pdf(file.path(modelOutputDirectory,paste("features-",sub(pattern="\\.",replacement="_",x=cvPoint),".pdf",sep="")),width=4,height=length(nonzeroFeatureNames)*1.5)
     p <- ggplot(melted, aes(x=factor(labels), y=value)) 
     p = p + facet_wrap(~variable,ncol=1) + geom_boxplot(outlier.colour=rgb(0,0,0,0),colour=rgb(0,0,0,.3)) + geom_point(aes(color=factor(labels)),alpha=I(0.25),shape=19,size=I(2)) + coord_flip() +  theme_bw() + ylab("") + xlab("") + theme(legend.position = "none")
     if (any(grepl(pattern="abundance",nonzeroFeatureNames))){
@@ -173,7 +173,7 @@ citrus.plotModelDifferentialFeatures.continuous = function(differentialFeatures,
     
     melted = melt(data.frame(features[,nonzeroFeatureNames,drop=F],labels=labels,check.names=F),id.vars="labels")
     
-    pdf(file.path(modelOutputDirectory,"HopefullyThisWorks.pdf")
+    pdf(file.path(modelOutputDirectory,"HopefullyThisWorks2.pdf"))
     #pdf(file.path(modelOutputDirectory,paste("features-",sub(pattern="\\.",replacement="_",x=cvPoint),".pdf",sep="")),width=4,height=length(nonzeroFeatureNames)*1.5)
     p <- ggplot(melted, aes(x=value, y=labels)) 
     p = p + facet_wrap(~variable,ncol=1) + geom_point(size=I(2)) + theme_bw() + ylab("") + xlab("") + theme(legend.position = "none")
