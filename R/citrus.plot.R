@@ -63,7 +63,7 @@ citrus.plotTypeErrorRate = function(modelType,modelOutputDirectory,regularizatio
       return()
     }
     
-    pdf(file.path(modelOutputDirectory,"ModelErrorRate.pdf"),width=6,height=6)
+     pdf(file.path(modelOutputDirectory,"ModelErrorRate.pdf")
     thresholds=regularizationThresholds
     errorRates=thresholdCVRates[,"cvm"]
     ylim=c(0,1)
@@ -173,7 +173,8 @@ citrus.plotModelDifferentialFeatures.continuous = function(differentialFeatures,
     
     melted = melt(data.frame(features[,nonzeroFeatureNames,drop=F],labels=labels,check.names=F),id.vars="labels")
     
-    pdf(file.path(modelOutputDirectory,paste("features-",sub(pattern="\\.",replacement="_",x=cvPoint),".pdf",sep="")),width=4,height=length(nonzeroFeatureNames)*1.5)
+    pdf(file.path(modelOutputDirectory,"HopefullyThisWorks.pdf")
+    #pdf(file.path(modelOutputDirectory,paste("features-",sub(pattern="\\.",replacement="_",x=cvPoint),".pdf",sep="")),width=4,height=length(nonzeroFeatureNames)*1.5)
     p <- ggplot(melted, aes(x=value, y=labels)) 
     p = p + facet_wrap(~variable,ncol=1) + geom_point(size=I(2)) + theme_bw() + ylab("") + xlab("") + theme(legend.position = "none")
     if (any(grepl(pattern="abundance",nonzeroFeatureNames))){
