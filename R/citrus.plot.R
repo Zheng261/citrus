@@ -622,7 +622,7 @@ addtlArgs = list(...)
   cat(paste("Plotting results for",modelType,"\n"))
   
   # Make model output directoy
-  modelOutputDirectory = file.path(outputDirectory,paste0(modelType,"_results"))
+  modelOutputDirectory = file.path(paste0(modelType,"_results"))
   dir.create(modelOutputDirectory,showWarnings=F,recursive=T)
   
   if ("errorRate" %in% plotTypes){
