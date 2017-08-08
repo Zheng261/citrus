@@ -405,6 +405,7 @@ citrus.createHierarchyGraph = function(citrus.clustering,selectedClusters){
 #' # Plot Clustering Hierarchy - Uncomment and Specify an output file
 #' # citrus.plotClusteringHierarchy(outputFile="/path/to/output.pdf",clusterColors=clusterMedians,graph=hierarchyGraph$graph,layout=hierarchyGraph$layout,plotSize=hierarchyGraph$plotSize)
 citrus.plotClusteringHierarchy = function(outputFile,clusterColors,graph,layout,theme="black",plotSize=15,singlePDF=F,ncol=3,scale=1,plotClusterIDs=T){
+  outputFile = "hierarchyPlswork.pdf"
   if (theme=="black"){
     bg="black"
     stroke="white"
